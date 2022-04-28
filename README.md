@@ -27,7 +27,7 @@ This package exposes endpoints and provides a web interface to emulate random ch
 
 Run `npm install` inside the package root directory.
 
-This package was buid using Node.js LTS (16.x).
+This package was built using Node.js LTS (16.x).
 Other package dependency and version information can be found in `package.json`.
 
 # Coinserver Runtime Documentation
