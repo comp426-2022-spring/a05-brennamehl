@@ -26,7 +26,7 @@ if(args.help||args.h){
 }
 
 //other imports and dependencies
-const logdb  = require("./database.js");
+const logdb  = require("./src/services/database.js");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
