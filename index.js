@@ -1,5 +1,6 @@
 // Place your server entry point code here
-
+// Serve static HTML files
+app.use(express.static('./public'));
 const minimist = require("minimist");
 const args = minimist(process.argv.slice(2));
 args['port'];
