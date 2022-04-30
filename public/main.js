@@ -107,12 +107,12 @@ function flipCall(event){
     const call = event.currentTarget;
     try {
         const formData = new FormData(call);
-        const result = sendCall({ url, formData });
-        console.log(result);
-        document.getElementById("choice").innerHTML = "Guess: "+result.call;
-        document.getElementById("actual").innerHTML = "Tails: "+result.flip;
-        document.getElementById("result").innerHTML = "Result: "+result.result;
-        document.getElementById.apply("coingame").innerHTML = '<li><img src="assets/img/'+result.call+'.png" class="bigcoin" id="callcoin"></li><li><img src="assets/img/'+result.flip+'.png" class="bigcoin"></li><li><img src="assets/img/'+result.result+'.png" class="bigcoin"></li>';
+        const results = sendCall({ url, formData });
+        console.log(results);
+        document.getElementById("choice").innerHTML = "Guess: "+results.call;
+        document.getElementById("actual").innerHTML = "Tails: "+results.flip;
+        document.getElementById("result").innerHTML = "Result: "+results.result;
+        document.getElementById.apply("coingame").innerHTML = '<li><img src="assets/img/'+result.call+'.png" class="guesscoin" id="callcoin"></li><li><img src="assets/img/'+result.flip+'.png" class="bigcoin"></li><li><img src="assets/img/'+result.result+'.png" class="bigcoin"></li>';
     } catch (error) {
         console.log(error);
     }
