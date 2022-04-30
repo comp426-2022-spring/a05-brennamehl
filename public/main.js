@@ -7,11 +7,13 @@ function clickHome(){
     document.getElementById("multi").className = "hidden";
     document.getElementById("guess").className = "hidden";
 }
+const single = document.getElementById("singlenav");
+single.addEventListener("click", clickSingle);
 function clickSingle(){
-    document.getElementById("homenav").className = "hidden";
-    document.getElementById("singlenav").className = "active";
-    document.getElementById("multinav").className = "hidden";
-    document.getElementById("guessnav").className = "hidden";
+    document.getElementById("home").className = "hidden";
+    document.getElementById("single").className = "active";
+    document.getElementById("multi").className = "hidden";
+    document.getElementById("guess").className = "hidden";
 }
 
 function clickMulti(){
