@@ -98,39 +98,62 @@ async function sendFlips({ url, formData }) {
 
 
 // Guess a flip by clicking either heads or tails button
-const call = document.getElementById("call");
-call.addEventListener("submit", flipCall);
-function flipCall(event){
-    event.preventDefault();
-    const endpoint = "app/flip/call";
-    const url = document.baseURI+endpoint;
-    const formEvent = event.currentTarget;
-    try {
-        const formData = new FormData(formEvent);
-        const results = await sendFlips({ url, formData });
-        console.log(results);
-        document.getElementById("choice").innerHTML = "Guess: "+results.call;
-        document.getElementById("actual").innerHTML = "Actual: "+results.flip;
-        document.getElementById("results").innerHTML = "Result: "+results.result;
-        document.getElementById("coingame").innerHTML = '<li><img src="./assets/img/'+results.call+'.png" class="guesscoin" id="callcoin"></li><li><img src="./assets/img/'+results.flip+'.png" class="bigcoin"></li><li><img src="./assets/img/'+results.result+'.png" class="bigcoin"></li>';
-    } catch (error) {
-        console.log(error);
+const tailsCall = document.getElementById("tailsCall")
+tailsCall.addEventListener("click", callTails)
+async function callTails() {
+    const endpoint = "app/flip/call/"
+    const url = document.baseURI+endpoint
+    const call = "tails"
+    try{
+        const result = await sendCall({url, call})
+        console.log(result)
+        updateResults(result)
+    }catch(error){
+        console.log(error)
     }
 }
 
-// Create a data sender
-async function sendCall({ url, call }) {
-    const callGuess = {"guess": call};
+const headsCall = document.getElementById("headsCall")
+headsCall.addEventListener("click", callHeads)
+async function callHeads() {
+    const endpoint = "app/flip/call/"
+    const url = document.baseURI+endpoint
+    const call = "heads"
+    try{
+        const result = await sendCall({url, call})
+        console.log(result)
+        updateResults(result)
+    }catch(error){
+        console.log(error)
+    }
+
+}
+
+// Call data sender
+async function sendCall({url, call}) {
+    const callJson = {"guess": call}
     const options = {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(callGuess),
-    };
+        body: JSON.stringify(callJson),
+      }
     const response = await fetch(url, options);
     return response.json()
+}
+
+// Function to update results html data
+function updateResults(result) {
+    const callResult = document.getElementById("callResult")
+    callResult.src = "./assets/img/" + result.call + ".png"
+
+    const flipResult = document.getElementById("flipResult")
+    flipResult.src = "./assets/img/" + result.flip + ".png"
+
+    const resultText = document.getElementById("resultText")
+    resultText.innerText = result.result
+
 }
 
 //creates the array of coin images

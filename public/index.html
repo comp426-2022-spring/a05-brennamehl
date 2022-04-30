@@ -61,26 +61,23 @@
             </li>
           </ul>
       </div>
-    <div id="guess" class="hidden">
-      <h1>Guess the Coin Flip!</h1>
-      <form id="call">
-        <label for="side">Take Your Guess:</label>
-        <select name="guess" id="guess" form="call">
-          <option value="heads">Heads</option>
-          <option value="tails">Tails</option>
-        </select>
-        <input type="submit" value="Flip a Coin!">
-      </form>
-      <h2>Flip Result:</h2>
-      <p><span id="choice">Guess: <span></p>
-        <p><span id="actual">Actual: <span></p>
-        <p><span id="results">Result: <span></p>
-        <ul id="coingame">
-            <li>
-            <img src="assets/img/coin.png" class="bigcoin"> 
-          </li>
-        </ul>
-    </div>
+      <div id="guess" class="hidden">
+        <h1>Guess the result</h1>
+  
+        <button id="tailsCall">Tails</button>
+          <button id="headsCall">Heads</button>
+  
+          <h2>Results</h2>
+            <p>Call:
+              <img src="./assets/img/coin.png" id="callResult" class="guesscoin"> </img>
+            </p>
+            <p>Flip:
+              <img src="./assets/img/coin.png" id ="flipResult" class="bigcoin"> </img>
+            </p>
+            <p>Result:
+              <strong id="resultText"></strong>
+            </p>      
+      </div>
 	<script src="main.js"></script>
   </body>
 </html>

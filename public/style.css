@@ -16,4 +16,5 @@ img.smallcoin {
 
 img.guesscoin {
   filter: grayscale(25%);
+  width: 100px
 }
