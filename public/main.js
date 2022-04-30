@@ -60,6 +60,7 @@ async function flipCoins(event) {
         console.log(flips);
         document.getElementById("heads").innerHTML = "Heads: "+flips.summary.heads;
         document.getElementById("tails").innerHTML = "Tails: "+flips.summary.tails;
+        document.getElementById("coinlist").innerHTML = coinArray(flips.raw);
     } catch (error) {
         console.log(error);
     }
@@ -96,5 +97,8 @@ const call = document.getElementById("call");
 //creates the array of coin images
 function coinArray(array){
     let text = "";
-    
+    for(let i = 0; i<array.length; i++){
+        text = text + '<li><img src="assets/img/'+array[i]+'.png" class="smallcoin"></li>';
+    }
+    return text;
 }
