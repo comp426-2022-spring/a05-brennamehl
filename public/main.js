@@ -86,4 +86,8 @@ async function sendFlips({ url, formData }) {
 
 // Enter number and press button to activate coin flip series
 
+function coinFlipSeries(){
+
+}
 // Guess a flip by clicking either heads or tails button
+const call = document.getElementById("call");
