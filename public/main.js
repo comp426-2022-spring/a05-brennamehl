@@ -32,7 +32,13 @@ coin.addEventListener("click", flipCoin);
 async function flipCoin(){
     const endpoint = "app/flip/";
     const url = document.baseURI+endpoint;
-    
+    await fetch(url).then(function(response){
+            return response.json();
+        }).then(function(result){
+            console.log(result);
+            document.getElementById("result").innerHTML = result.flip;
+            document.getElementById("")
+        })
 }
 // Flip multiple coins and show coin images in table as well as summary results
 const coins = document.getElementById("coins")
@@ -42,10 +48,10 @@ coins.addEventListener("submit", flipCoins)
 async function flipCoins(event) {
     event.preventDefault();
     
-    const endpoint = "app/flip/coins/"
-    const url = document.baseURI+endpoint
+    const endpoint = "app/flip/coins/";
+    const url = document.baseURI+endpoint;
 
-    const formEvent = event.currentTarget
+    const formEvent = event.currentTarget;
 
     try {
         const formData = new FormData(formEvent);
