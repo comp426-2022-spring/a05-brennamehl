@@ -5,6 +5,12 @@ function clickHome(){
     document.getElementById("multinav").className = "hidden";
     document.getElementById("guessnav").className = "hidden";
 }
+function clickSingle(){
+    document.getElementById("homenav").className = "hidden";
+    document.getElementById("singlenav").className = "active";
+    document.getElementById("multinav").className = "hidden";
+    document.getElementById("guessnav").className = "hidden";
+}
 // Flip one coin and show coin image to match result when button clicked
 
 // Flip multiple coins and show coin images in table as well as summary results
