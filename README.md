@@ -171,7 +171,15 @@ curl http://localhost:5555/app/flip/call/heads
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 47
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:54:56 GMT
+ETag: W/"2f-7jHpBxeRlMwmX45a5nEi...
+Connection:  keep-alive
+Keep-Alive: timeout=5]
 ```
 
 ### /app/flip/call/ (POST)
