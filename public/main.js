@@ -1,9 +1,11 @@
 // Focus div based on nav button click
+const home = document.getElementById("homenav");
+home.addEventListener("click", clickHome);
 function clickHome(){
-    document.getElementById("homenav").className = "active";
-    document.getElementById("singlenav").className = "hidden";
-    document.getElementById("multinav").className = "hidden";
-    document.getElementById("guessnav").className = "hidden";
+    document.getElementById("home").className = "active";
+    document.getElementById("single").className = "hidden";
+    document.getElementById("multi").className = "hidden";
+    document.getElementById("guess").className = "hidden";
 }
 function clickSingle(){
     document.getElementById("homenav").className = "hidden";
