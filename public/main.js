@@ -18,6 +18,13 @@ function clickMulti(){
     document.getElementById("multinav").className = "active";
     document.getElementById("guessnav").className = "hidden";
 }
+
+function clickGuess(){
+    document.getElementById("homenav").className = "hidden";
+    document.getElementById("singlenav").className = "hidden";
+    document.getElementById("multinav").className = "hidden";
+    document.getElementById("guessnav").className = "active";
+}
 // Flip one coin and show coin image to match result when button clicked
 
 // Flip multiple coins and show coin images in table as well as summary results
