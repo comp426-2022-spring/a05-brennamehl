@@ -99,13 +99,14 @@ async function sendFlips({ url, formData }) {
 // Guess a flip by clicking either heads or tails button
 const call = document.getElementById("call");
 call.addEventListener("submit", flipCall);
-function flipCall(){
+function flipCall(event){
+    event.preventDefault();
     const endpoint = "app/flip/call";
     const url = document.baseURI+endpoint;
-    const formEvent = event.currentTarget;
+    const call = event.currentTarget;
     try {
-        const formData = new FormData(formEvent);
-        const result = sendFlips({ url, formData });
+        const formData = new FormData(call);
+        const result = sendCall({ url, formData });
         console.log(result);
         document.getElementById("choice").innerHTML = "Guess: "+result.call;
         document.getElementById("actual").innerHTML = "Tails: "+result.flip;
@@ -114,6 +115,21 @@ function flipCall(){
     } catch (error) {
         console.log(error);
     }
+}
+
+// Create a data sender
+async function sendCall({ url, call }) {
+    const callGuess = {"guess": call};
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(callGuess),
+    };
+    const response = await fetch(url, options);
+    return response.json()
 }
 
 //creates the array of coin images
