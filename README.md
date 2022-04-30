@@ -123,7 +123,15 @@ Keep-Alive: timeout=5
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 121
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:51:57 GMT
+ETag: W/"79-Ao/mUY2UfS1O1jGRHMW...
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/coin/ (GET)
