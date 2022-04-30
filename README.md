@@ -63,20 +63,19 @@ curl http://localhost:5555/app/
 #### Response body
 
 ```
-{"message":"Your API works! (200)"}
+200 OK
 ```
 
 #### Response headers
 
 ```
 HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 35
-ETag: W/"23-KNmhzXgQhtEE5ovS3fuLixylNK0"
-Date: Thu, 07 Apr 2022 15:07:49 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+Content-Type: text/plain
+Date: Sat, 30 Apr 2022 00:32:11 GMT
+X-Powered-By: Express
 ```
 
 ### /app/flip/ (GET)
