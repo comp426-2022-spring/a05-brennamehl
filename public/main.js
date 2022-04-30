@@ -29,7 +29,11 @@ function clickGuess(){
 // Flip one coin and show coin image to match result when button clicked
 const coin = document.getElementById("coin");
 coin.addEventListener("click", flipCoin);
-
+async function flipCoin(){
+    const endpoint = "app/flip/";
+    const url = document.baseURI+endpoint;
+    
+}
 // Flip multiple coins and show coin images in table as well as summary results
 const coins = document.getElementById("coins")
 // Add event listener for coins form
