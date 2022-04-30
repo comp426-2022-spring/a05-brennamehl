@@ -83,19 +83,27 @@ X-Powered-By: Express
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 16
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:45:28 GMT
+ETag: W/"10-N9e0DDykqBPnqphc8f4b
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flips/:number/ (GET)
