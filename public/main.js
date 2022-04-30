@@ -50,7 +50,6 @@ async function flipCoins(event) {
     
     const endpoint = "app/flip/coins/";
     const url = document.baseURI+endpoint;
-
     const formEvent = event.currentTarget;
 
     try {
@@ -87,13 +86,27 @@ async function sendFlips({ url, formData }) {
 
 // Enter number and press button to activate coin flip series
 
-function coinFlipSeries(){
 
-}
 
 // Guess a flip by clicking either heads or tails button
 const call = document.getElementById("call");
 call.addEventListener("submit", flipCall);
+async function flipCall(){
+    const endpoint = "app/flip/call";
+    const url = document.baseURI+endpoint;
+    const formEvent = event.currentTarget;
+    try {
+        const formData = new FormData(formEvent);
+        const result = await sendFlips({ url, formData });
+        console.log(result);
+        document.getElementById("choice").innerHTML = "Guess: "+result.call;
+        document.getElementById("actual").innerHTML = "Tails: "+result.flip;
+        document.getElementById("result").innerHTML = "Result: "+result.result;
+        document.getElementById.apply("coingame").innerHTML = '<li><img src="assets/img/'+result.call+'.png" class="bigcoin" id="callcoin"></li><li><img src="assets/img/'+result.flip+'.png" class="bigcoin"></li><li><img src="assets/img/'+result.result+'.png" class="bigcoin"></li>';
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 //creates the array of coin images
 function coinArray(array){
