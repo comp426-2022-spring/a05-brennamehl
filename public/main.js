@@ -37,10 +37,10 @@ function clickGuess(){
 // Flip one coin and show coin image to match result when button clicked
 const coin = document.getElementById("coin");
 coin.addEventListener("click", flipCoin);
-async function flipCoin(){
+function flipCoin(){
     const endpoint = "app/flip/";
     const url = document.baseURI+endpoint;
-    await fetch(url).then(function(response){
+    fetch(url).then(response=>{
             return response.json();
         }).then(function(result){
             console.log(result);
