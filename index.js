@@ -46,7 +46,7 @@ const server = app.listen(port, () => {
 
 //creates access log if log is true
 if(args.log==true){
-const WRITESTREAM = fs.createWriteStream('access.log', { flags: 'a' });
+const WRITESTREAM = fs.createWriteStream('./data/log/access.log', { flags: 'a' });
 // Set up the access logging middleware
 app.use(morgan('combined', { stream: WRITESTREAM }));
 }
@@ -134,7 +134,7 @@ app.post('/app/flip/call/', (req, res, next) => {
     const game = flipACoin(req.body.guess)
     res.status(200).json(game)
 })
-   
+
 //endpoint for nonexistent URL
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND');
