@@ -165,7 +165,7 @@ curl http://localhost:5555/app/flip/call/heads
 #### Response body
 
 ```
-
+{"call":"heads","flip":"tails","result":"lose"}
 ```
 
 #### Response headers
