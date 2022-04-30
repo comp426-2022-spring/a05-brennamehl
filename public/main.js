@@ -83,6 +83,7 @@ async function sendFlips({ url, formData }) {
     const response = await fetch(url, options);
     return response.json()
 }
+
 // Enter number and press button to activate coin flip series
 
 // Guess a flip by clicking either heads or tails button
