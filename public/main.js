@@ -63,10 +63,11 @@ async function flipCoins(event) {
     try {
         const formData = new FormData(formEvent);
         const flips = await sendFlips({ url, formData });
-
+        const heads = flips.summary.heads||0;
+        const tails = flips.summary.tails||0;
         console.log(flips);
-        document.getElementById("heads").innerHTML = "Heads: "+flips.summary.heads;
-        document.getElementById("tails").innerHTML = "Tails: "+flips.summary.tails;
+        document.getElementById("heads").innerHTML = "Heads: "+heads;
+        document.getElementById("tails").innerHTML = "Tails: "+tails;
         document.getElementById("coinlist").innerHTML = coinArray(flips.raw);
     } catch (error) {
         console.log(error);
