@@ -123,7 +123,18 @@ app.get("/app/flip", (req, res) =>{
     res.type("text/plain");
 })
 
-    
+ //new endpoints
+ app.post('/app/flip/coins/', (req, res, next) => {
+    const flips = coinFlips(req.body.number)
+    const count = countFlips(flips)
+    res.status(200).json({"raw":flips,"summary":count})
+})
+
+app.post('/app/flip/call/', (req, res, next) => {
+    const game = flipACoin(req.body.guess)
+    res.status(200).json(game)
+})
+   
 //endpoint for nonexistent URL
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND');
