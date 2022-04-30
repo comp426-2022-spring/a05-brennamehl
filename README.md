@@ -159,7 +159,7 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/call/heads
 ```
 
 #### Response body
