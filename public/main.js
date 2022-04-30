@@ -25,11 +25,13 @@ function clickMulti(){
     document.getElementById("guess").className = "hidden";
 }
 
+const guess = document.getElementById("guessnav");
+guess.addEventListener("click", clickGuess);
 function clickGuess(){
-    document.getElementById("homenav").className = "hidden";
-    document.getElementById("singlenav").className = "hidden";
-    document.getElementById("multinav").className = "hidden";
-    document.getElementById("guessnav").className = "active";
+    document.getElementById("home").className = "hidden";
+    document.getElementById("single").className = "hidden";
+    document.getElementById("multi").className = "hidden";
+    document.getElementById("guess").className = "active";
 }
 
 // Flip one coin and show coin image to match result when button clicked
