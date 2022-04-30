@@ -112,7 +112,7 @@ function flipCall(event){
         document.getElementById("choice").innerHTML = "Guess: "+results.call;
         document.getElementById("actual").innerHTML = "Tails: "+results.flip;
         document.getElementById("result").innerHTML = "Result: "+results.result;
-        document.getElementById.apply("coingame").innerHTML = '<li><img src="assets/img/'+result.call+'.png" class="guesscoin" id="callcoin"></li><li><img src="assets/img/'+result.flip+'.png" class="bigcoin"></li><li><img src="assets/img/'+result.result+'.png" class="bigcoin"></li>';
+        document.getElementById("coingame").innerHTML = '<li><img src="assets/img/'+results.call+'.png" class="guesscoin" id="callcoin"></li><li><img src="assets/img/'+results.flip+'.png" class="bigcoin"></li><li><img src="assets/img/'+results.result+'.png" class="bigcoin"></li>';
     } catch (error) {
         console.log(error);
     }
