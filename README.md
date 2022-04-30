@@ -117,7 +117,7 @@ Keep-Alive: timeout=5
 #### Response body
 
 ```
-
+{"raw":["tails","heads","heads","tails","tails","heads","tails","heads","heads","tails"],"summary":{"heads":5,"tails":5}}
 ```
 
 #### Response headers
