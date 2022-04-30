@@ -99,13 +99,13 @@ async function sendFlips({ url, formData }) {
 // Guess a flip by clicking either heads or tails button
 const call = document.getElementById("call");
 call.addEventListener("submit", flipCall);
-async function flipCall(){
+function flipCall(){
     const endpoint = "app/flip/call";
     const url = document.baseURI+endpoint;
     const formEvent = event.currentTarget;
     try {
         const formData = new FormData(formEvent);
-        const result = await sendFlips({ url, formData });
+        const result = sendFlips({ url, formData });
         console.log(result);
         document.getElementById("choice").innerHTML = "Guess: "+result.call;
         document.getElementById("actual").innerHTML = "Tails: "+result.flip;
