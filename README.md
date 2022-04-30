@@ -57,7 +57,7 @@ node server.js [options]
 #### Request cURL
 
 ```
-curl http://localhost:5000/app/
+curl http://localhost:5555/app/
 ```
 
 #### Response body
