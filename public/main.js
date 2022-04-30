@@ -104,10 +104,10 @@ function flipCall(event){
     event.preventDefault();
     const endpoint = "app/flip/call";
     const url = document.baseURI+endpoint;
-    const call = event.currentTarget;
+    const formEvent = event.currentTarget;
     try {
-        const formData = new FormData(call);
-        const results = sendCall({ url, formData });
+        const formData = new FormData(formEvent);
+        const results = await sendFlips({ url, formData });
         console.log(results);
         document.getElementById("choice").innerHTML = "Guess: "+results.call;
         document.getElementById("actual").innerHTML = "Actual: "+results.flip;
