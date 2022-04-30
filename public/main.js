@@ -37,8 +37,8 @@ async function flipCoin(){
         }).then(function(result){
             console.log(result);
             document.getElementById("result").innerHTML = result.flip;
-            document.getElementById("")
-        })
+            document.getElementById("singleFlip").setAttribute("src","assets/img/"+result.flip+".png");  
+        });
 }
 // Flip multiple coins and show coin images in table as well as summary results
 const coins = document.getElementById("coins")
