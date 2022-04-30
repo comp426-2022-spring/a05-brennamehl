@@ -139,19 +139,27 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/coin/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 16
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:45:28 GMT
+ETag: W/"10-N9e0DDykqBPnqphc8f4b
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/call/:guess/ (GET)
@@ -241,39 +249,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/log/access
 ```
 
 #### Response body
 
 ```
-
+[{"id":1,"remoteaddr":"::1","remoteuser":null,"time":"1650939501200.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"},{"id":2,"remoteaddr":"::1","remoteuser":null,"time":"1650939538422.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"},{"id":3,"remoteaddr":"::1","remoteuser":null,"time":"1650939778936.0","method":"GET","url":"/app/error","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"}]
 ```
 
 #### Response headers
 
 ```
-
-```
-
-### /app/log/access/ (GET)
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 401
+ETag: W/"191-zIX/D9vHmBhTLyWkUb1+6Em57CE"
+Date: Fri, 29 Apr 2022 06:58:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/log/error/ (GET)
