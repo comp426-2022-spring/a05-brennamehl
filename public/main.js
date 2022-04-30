@@ -90,9 +90,10 @@ async function sendFlips({ url, formData }) {
 function coinFlipSeries(){
 
 }
+
 // Guess a flip by clicking either heads or tails button
 const call = document.getElementById("call");
-
+call.addEventListener("submit", flipCall);
 
 //creates the array of coin images
 function coinArray(array){
