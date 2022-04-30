@@ -64,6 +64,25 @@ async function flipCoins(event) {
         console.log(error);
     }
 }
+
+// Create a data sender
+async function sendFlips({ url, formData }) {
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formDataJson = JSON.stringify(plainFormData);
+    console.log(formDataJson);
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: formDataJson
+    };
+
+    const response = await fetch(url, options);
+    return response.json()
+}
 // Enter number and press button to activate coin flip series
 
 // Guess a flip by clicking either heads or tails button
