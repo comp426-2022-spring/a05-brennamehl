@@ -27,7 +27,7 @@ This package exposes endpoints and provides a web interface to emulate random ch
 
 Run `npm install` inside the package root directory.
 
-This package was buid using Node.js LTS (16.x).
+This package was built using Node.js LTS (16.x).
 Other package dependency and version information can be found in `package.json`.
 
 # Coinserver Runtime Documentation
@@ -57,26 +57,25 @@ node server.js [options]
 #### Request cURL
 
 ```
-curl http://localhost:5000/app/
+curl http://localhost:5555/app/
 ```
 
 #### Response body
 
 ```
-{"message":"Your API works! (200)"}
+200 OK
 ```
 
 #### Response headers
 
 ```
 HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 35
-ETag: W/"23-KNmhzXgQhtEE5ovS3fuLixylNK0"
-Date: Thu, 07 Apr 2022 15:07:49 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+Content-Type: text/plain
+Date: Sat, 30 Apr 2022 00:32:11 GMT
+X-Powered-By: Express
 ```
 
 ### /app/flip/ (GET)
@@ -84,19 +83,27 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 16
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:45:28 GMT
+ETag: W/"10-N9e0DDykqBPnqphc8f4b
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flips/:number/ (GET)
@@ -104,19 +111,27 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+ curl http://localhost:5555/app/flips/10
 ```
 
 #### Response body
 
 ```
-
+{"raw":["tails","heads","heads","tails","tails","heads","tails","heads","heads","tails"],"summary":{"heads":5,"tails":5}}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 121
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:51:57 GMT
+ETag: W/"79-Ao/mUY2UfS1O1jGRHMW...
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/coin/ (GET)
@@ -124,19 +139,27 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/coin/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 16
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:45:28 GMT
+ETag: W/"10-N9e0DDykqBPnqphc8f4b
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/call/:guess/ (GET)
@@ -144,19 +167,27 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/call/heads
 ```
 
 #### Response body
 
 ```
-
+{"call":"heads","flip":"tails","result":"lose"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 47
+Content-Type: application/json; charset=utf-8
+Date: Sat, 30 Apr 2022 00:54:56 GMT
+ETag: W/"2f-7jHpBxeRlMwmX45a5nEi...
+Connection:  keep-alive
+Keep-Alive: timeout=5]
 ```
 
 ### /app/flip/call/ (POST)
@@ -218,39 +249,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/log/access
 ```
 
 #### Response body
 
 ```
-
+[{"id":1,"remoteaddr":"::1","remoteuser":null,"time":"1650939501200.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"},{"id":2,"remoteaddr":"::1","remoteuser":null,"time":"1650939538422.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"},{"id":3,"remoteaddr":"::1","remoteuser":null,"time":"1650939778936.0","method":"GET","url":"/app/error","protocol":"http","httpversion":1.1,"status":200,"referer":null,"useragent":"curl/7.74.0"}]
 ```
 
 #### Response headers
 
 ```
-
-```
-
-### /app/log/access/ (GET)
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 401
+ETag: W/"191-zIX/D9vHmBhTLyWkUb1+6Em57CE"
+Date: Fri, 29 Apr 2022 06:58:12 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/log/error/ (GET)
